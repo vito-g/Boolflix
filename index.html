@@ -16,7 +16,7 @@
       </div>
       <div class="results">
         <!-- Single Search -->
-        <div v-for="element in obj" v-if="found == true">
+        <div v-for="element in obj">
           <h3>{{element.title}}</h3>
           <span class="original-title">{{element.original_title}}</span>
           <span class="lang">{{element.original_language}}</span>
@@ -33,3 +33,6 @@
 2.	original_title
 3.	original_language
 4.	vote_average -->
+
+<!--
+  axios.get('https://api.themoviedb.org/3/search/movie?api_key=1eab81ae7f08840126e340e60ce049eb&query=' + this.textSearched) -->

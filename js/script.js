@@ -11,28 +11,19 @@ Vogliamo dopo la risposta dell’API visualizzare a schermo i seguenti valori pe
 new Vue({
   el: '#app',
   data: {
-    textSearched: '',
+    textSearched: ' ',
     obj: [],
     found: false
   },
-  mounted() {
-    const self = this;
-    console.log('ho montato l\'app');
 
-      axios.get('https://api.themoviedb.org/3/search/movie?api_key=1eab81ae7f08840126e340e60ce049eb?query=' + self.textSearched)
-      .then(function(resp) {
-        self.obj = resp.data.results;
-        console.log('risposta vue', self.obj);
-      });
-  },
   methods: {
     searchForTextFx: function() {
-    this.obj.forEach((element) => {
-      if (element.original_title.toLowerCase().includes(this.textSearched.toLowerCase())) {
-        this.found = true;
-      } else {
-        this.found = false;
-      }
+      const self = this;
+      axios.get('https://api.themoviedb.org/3/search/movie?api_key=1eab81ae7f08840126e340e60ce049eb&query=' + this.textSearched)
+      .then(function(resp) {
+      console.log(resp);
+      self.obj = resp.data.results;
+      console.log(self.obj);
     });
   }
   }
