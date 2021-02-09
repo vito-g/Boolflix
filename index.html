@@ -11,11 +11,25 @@
 
     <div id="app">
       <div class="search-bar">
-        <input v-model="textSearched" type="text" name="" value="">
-        {{textSearched}}
+        <input @keyup="searchForTextFx" v-model="textSearched" type="text" name="" value="">
+        <button type="button" name="button">Search</button>
+      </div>
+      <div class="results">
+        <!-- Single Search -->
+        <div v-for="element in obj" v-if="found == true">
+          <h3>{{element.title}}</h3>
+          <span class="original-title">{{element.original_title}}</span>
+          <span class="lang">{{element.original_language}}</span>
+          <span class="lang">{{element.vote_average}}</span>
+        </div>
       </div>
     </div>
 
     <script src="js/script.js" charset="utf-8"></script>
   </body>
 </html>
+
+<!-- 1.	title
+2.	original_title
+3.	original_language
+4.	vote_average -->
