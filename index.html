@@ -18,9 +18,10 @@
         <!-- Single Search -->
         <div v-for="element in obj">
           <h3>{{element.title}}</h3>
-          <span class="original-title">{{element.original_title}}</span>
-          <span class="lang">{{element.original_language}}</span>
-          <span class="lang">{{element.vote_average}}</span>
+          <div class="original-title"> <strong>Original Title:</strong> {{element.original_title}}</div>
+          <div class="lang"><strong>Language:</strong> {{element.original_language}}</div>
+          <div class="lang"><strong>Vote:</strong> {{element.vote_average}}</div>
+          <br>
         </div>
       </div>
     </div>
