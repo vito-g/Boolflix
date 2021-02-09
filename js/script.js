@@ -12,8 +12,7 @@ new Vue({
   el: '#app',
   data: {
     textSearched: ' ',
-    obj: [],
-    found: false
+    obj: []
   },
 
   methods: {
