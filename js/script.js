@@ -50,7 +50,7 @@ new Vue({
         element.vote_average = Math.ceil(element.vote_average / 2);
 
       });
-      console.log(self.obj);
+      // console.log(self.obj);
     });
   }
   }
