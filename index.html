@@ -17,24 +17,38 @@
         <button @click="searchForTextFx" type="button" name="button">Search</button>
       </div>
       <div class="results">
+
         <!-- Single Search -->
         <div v-for="element in obj">
+          <!-- Title -->
           <h3>{{element.title}}</h3>
+          <!-- END Title -->
+
+          <!-- Original Title -->
           <div class="original-title">
             <strong>Original Title:</strong> {{element.original_title}}
           </div>
+          <!-- END Original Title -->
+
+          <!-- Language -->
           <div class="lang">
             <div class="img">
               <img v-if="availableFlag.includes( element.original_language)" :src="'flag/' + element.original_language + '.svg'" alt="">
               <span v-else><strong>Language: </strong>{{element.original_language}}</span>
             </div>
           </div>
+          <!-- END Language -->
+
+          <!-- Vote -->
           <div class="vote">
             <strong>Vote: </strong><span><i v-for="i in getVote(element.vote_average)" class="fas fa-star"></i><i v-for="i in (5 - getVote(element.vote_average))" class="far fa-star"></i></span>
           </div>
+          <!-- END Vote -->
           <br>
+
         </div>
         <!-- END Single Search -->
+
       </div>
     </div>
 
