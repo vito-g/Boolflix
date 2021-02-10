@@ -26,9 +26,9 @@ new Vue({
   data: {
     textSearched: ' ',
     obj: [],
-    voteArray: [],
+
     roundedVoteArray: [],
-    flag: []
+
   },
 
   methods: {
@@ -50,11 +50,14 @@ new Vue({
         // console.log('vote rounded Array: ', self.roundedVoteArray);
 
         // Trasformiamo il voto da 1 a 10 decimale in un numero intero da 1 a 5
-        element.vote_average = Math.ceil(element.vote_average / 2);
+        // element.vote_average = Math.ceil(element.vote_average / 2);
 
       });
       console.log(self.obj);
     });
+  },
+  getVote: function(vote) {
+    return Math.ceil(vote / 2);
   }
 
 
