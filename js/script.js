@@ -41,8 +41,8 @@ new Vue({
       console.log(resp);
       self.obj = resp.data.results;
       console.log(self.obj);
-      // self.voteArray = resp.data.results.vote_average;
-      self.obj.forEach((element) => {  // element è la stringa type
+
+      self.obj.forEach((element) => {  
         self.voteArray.push(element.vote_average);
         self.roundedVoteArray.push(Math.ceil(element.vote_average));
         console.log('vote average: ', self.voteArray);
