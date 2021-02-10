@@ -35,16 +35,15 @@ new Vue({
       //Per bypassare lo scope interno alla FX del then
       const self = this;
 
-      axios.get('https://api.themoviedb.org/3/search/movie?api_key=1eab81ae7f08840126e340e60ce049eb&query=' + this.textSearched)
-      .then(function(resp) {
+      axios.get('https://api.themoviedb.org/3/search/movie?api_key=1eab81ae7f08840126e340e60ce049eb&query=' + this.textSearched).then(function(resp) {
       console.log(resp);
       self.obj = resp.data.results;
       // console.log(self.obj);
-    });
-  },
-  getVote: function(vote) {
-    return Math.ceil(vote / 2);
-  }
+      });
+    },
+    getVote: function(vote) {
+      return Math.ceil(vote / 2);
+    }
 
 
 
