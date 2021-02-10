@@ -26,12 +26,13 @@ new Vue({
   data: {
     textSearched: ' ',
     obj: [],
+    objSeries: [],
     availableFlag: ['it', 'en', 'fr', 'de', 'es']
   },
 
   methods: {
 
-    searchForTextFx: function() {
+    searchMoviesFx: function() {
       //Per bypassare lo scope interno alla FX del then
       const self = this;
       // axios.get('https://api.themoviedb.org/3/search/movie?api_key=1eab81ae7f08840126e340e60ce049eb&query=' + this.textSearched)
@@ -47,7 +48,24 @@ new Vue({
       .then(function(resp) {
       console.log(resp);
       self.obj = resp.data.results;
-      // console.log(self.obj);
+      console.log(self.obj);
+      });
+    },
+
+    searchSeriesFx: function() {
+      //Per bypassare lo scope interno alla FX del then
+      const self = this;
+      axios
+        .get('https://api.themoviedb.org/3/search/tv', {
+          params: {
+            api_key: '1eab81ae7f08840126e340e60ce049eb',
+            query: this.textSearched,
+        },
+      })
+      .then(function(resp) {
+      console.log(resp);
+      self.objSeries = resp.data.results;
+      console.log(self.objSeries);
       });
     },
     getVote: function(vote) {
