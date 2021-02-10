@@ -42,9 +42,9 @@ new Vue({
       self.obj = resp.data.results;
       console.log(self.obj);
 
-      self.obj.forEach((element) => {  
-        self.voteArray.push(element.vote_average);
-        self.roundedVoteArray.push(Math.ceil(element.vote_average));
+      self.obj.forEach((element) => {
+        self.voteArray.push(element.vote_average / 2);
+        self.roundedVoteArray.push(Math.ceil(element.vote_average / 2));
         console.log('vote average: ', self.voteArray);
         console.log('vote rounded: ', self.roundedVoteArray);
         // console.log(self.voteArray);
