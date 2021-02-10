@@ -20,13 +20,14 @@
         <!-- Single Search -->
         <div v-for="element in obj">
           <h3>{{element.title}}</h3>
-          <div class="original-title"> <strong>Original Title:</strong> {{element.original_title}}</div>
+          <div class="original-title">
+            <strong>Original Title:</strong> {{element.original_title}}
+          </div>
           <div class="lang">
-            <strong>Language:</strong> {{element.original_language}}
             <div class="img">
-              <img :src="'flag/' + element.original_language + '.svg'" alt="">
+              <img v-if="availableFlag.includes( element.original_language)" :src="'flag/' + element.original_language + '.svg'" alt="">
+              <span v-else><strong>Language: </strong>{{element.original_language}}</span>
             </div>
-            <!-- <img :src="'https://' + element.backdrop_path" alt=""> -->
           </div>
           <div class="vote">
             <strong>Vote: </strong><span><i v-for="i in getVote(element.vote_average)" class="fas fa-star"></i><i v-for="i in (5 - getVote(element.vote_average))" class="far fa-star"></i></span>

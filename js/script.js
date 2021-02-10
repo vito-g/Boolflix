@@ -26,9 +26,7 @@ new Vue({
   data: {
     textSearched: ' ',
     obj: [],
-
-    roundedVoteArray: [],
-
+    availableFlag: ['it', 'en', 'fr', 'de', 'es']
   },
 
   methods: {
