@@ -40,16 +40,17 @@ new Vue({
       .then(function(resp) {
       console.log(resp);
       self.obj = resp.data.results;
-      console.log(self.obj);
+      // console.log(self.obj);
 
       self.obj.forEach((element) => {
-        self.voteArray.push(element.vote_average / 2);
-        self.roundedVoteArray.push(Math.ceil(element.vote_average / 2));
-        console.log('vote average: ', self.voteArray);
-        console.log('vote rounded: ', self.roundedVoteArray);
-        // console.log(self.voteArray);
+        // self.voteArray.push(element.vote_average / 2);
+        // self.roundedVoteArray.push(Math.ceil(element.vote_average / 2));
+        // console.log('vote average Array: ', self.voteArray);
+        // console.log('vote rounded Array: ', self.roundedVoteArray);
+        element.vote_average = Math.ceil(element.vote_average / 2);
 
       });
+      console.log(self.obj);
     });
   }
   }
