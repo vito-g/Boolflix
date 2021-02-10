@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>BOOLFIX</title>
@@ -20,8 +21,12 @@
         <div v-for="element in obj">
           <h3>{{element.title}}</h3>
           <div class="original-title"> <strong>Original Title:</strong> {{element.original_title}}</div>
-          <div class="lang"><strong>Language:</strong> {{element.original_language}}</div>
           <div class="lang">
+            <strong>Language:</strong> {{element.original_language}}
+            <!-- <img :src="'element.backdrop_path'" alt=""> -->
+            <!-- <img :src="'https://' + element.backdrop_path" alt=""> -->
+          </div>
+          <div class="vote">
             <strong>Vote: </strong><span><i v-for="i in element.vote_average" class="fas fa-star"></i><i v-for="i in (5 - element.vote_average)" class="far fa-star"></i></span>
           </div>
           <br>
@@ -33,3 +38,4 @@
     <script src="js/script.js" charset="utf-8"></script>
   </body>
 </html>
+<!-- <img src="https://www.disegnidacoloraregratis.it/foto/natura/estate/sole.JPG" alt=""> -->
