@@ -40,11 +40,6 @@ new Vue({
       console.log(resp);
       self.obj = resp.data.results;
       // console.log(self.obj);
-
-      self.obj.forEach((element) => {
-        // Trasformiamo il voto da 1 a 10 decimale in un numero intero da 1 a 5
-        // element.vote_average = Math.ceil(element.vote_average / 2);
-      });
     });
   },
   getVote: function(vote) {
