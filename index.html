@@ -71,7 +71,7 @@
 
             <!-- Vote -->
             <div class="vote">
-              <span>Vote: </span><span><i v-for="i in getVote(element.vote_average)" class="fas fa-star"></i><i v-for="i in (5 - getVote(element.vote_average))" class="far fa-star"></i></span>
+              <span>Vote: </span><i v-for="i in getVote(element.vote_average)" class="fas fa-star"></i><i v-for="i in (5 - getVote(element.vote_average))" class="far fa-star"></i>
             </div>
             <!-- End Vote -->
 
