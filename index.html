@@ -22,7 +22,7 @@
       <div class="results">
 
         <!-- Single MOVIE Search -->
-        <div class="single-box" v-for="element in obj">
+        <div class="single-box" v-for="element in objMovies">
 
           <img v-if="element.poster_path" class="poster" :src="picturePath + element.poster_path" alt="">
           <img v-else="!element.poster_path" class="poster" :src="picturePlaceHolder" alt="">
@@ -75,7 +75,7 @@
 
           <img v-if="element.poster_path" class="poster" :src="picturePath + element.poster_path" alt="">
           <img v-else="!element.poster_path" class="poster" :src="picturePlaceHolder" alt="">
-                  
+
           <div class="info">
             <!-- Title -->
             <div class="title">

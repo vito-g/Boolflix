@@ -37,7 +37,7 @@ new Vue({
   el: '#app',
   data: {
     textSearched: ' ',
-    obj: [],
+    objMovies: [],
     objSeries: [],
     availableFlag: ['it', 'en', 'fr', 'de', 'es'],
     picturePath: 'https://image.tmdb.org/t/p/w342/',
@@ -61,8 +61,8 @@ new Vue({
       })
       .then(function(resp) {
       console.log(resp);
-      self.obj = resp.data.results;
-      console.log(self.obj);
+      self.objMovies = resp.data.results;
+      console.log(self.objMovies);
       });
     },
 
