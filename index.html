@@ -33,7 +33,7 @@
         <div class="single-box" v-for="element in objMovies">
 
           <img v-if="element.poster_path" class="poster" :src="picturePath + element.poster_path" alt="">
-          <img v-else="!element.poster_path" class="poster" :src="picturePlaceHolder" alt="">
+          <img v-else class="poster" :src="picturePlaceHolder" alt="">
 
           <div class="info">
             <!-- Title -->
