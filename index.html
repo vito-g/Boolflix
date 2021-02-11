@@ -29,23 +29,32 @@
 
       <div class="results">
 
-        <!-- Single MOVIE Search -->
-        <div class="single-box" v-for="element in objMovies">
+        <!-- Single Search -->
+        <div class="single-box" v-for="element in obj">
 
           <img v-if="element.poster_path" class="poster" :src="picturePath + element.poster_path" alt="">
           <img v-else class="poster" :src="picturePlaceHolder" alt="">
 
           <div class="info">
             <!-- Title -->
-            <div class="title">
+            <div v-if="element.title" class="title">
               <strong>Title:</strong>
               {{element.title}}
+            </div>
+
+            <div v-if="element.name" class="title">
+              <strong>Title:</strong>
+              {{element.name}}
             </div>
             <!-- End Title -->
 
             <!-- Original Title -->
-            <div class="original-title">
+            <div v-if="element.original_title" class="original-title">
               <strong>Original Title:</strong> {{element.original_title}}
+            </div>
+
+            <div v-if="element.original_name" class="original-name">
+              <strong>Original Title:</strong> {{element.original_name}}
             </div>
             <!-- End Original Title -->
 
@@ -74,55 +83,8 @@
           </div>
 
         </div>
-        <!-- END Single MOVIE Search -->
+        <!-- END Single Search -->
 
-
-
-        <!-- Single SERIES Search-->
-        <div class="single-box" v-for="element in objSeries">
-
-          <img v-if="element.poster_path" class="poster" :src="picturePath + element.poster_path" alt="">
-          <img v-else="!element.poster_path" class="poster" :src="picturePlaceHolder" alt="">
-
-          <div class="info">
-            <!-- Title -->
-            <div class="title">
-              <strong>Title:</strong>
-              {{element.name}}
-            </div>
-            <!-- End Title -->
-
-            <!-- Original Title -->
-            <div class="original-title">
-              <strong>Original Title:</strong> {{element.original_name}}
-            </div>
-            <!-- End Original Title -->
-
-            <!-- Language -->
-            <div class="lang">
-              <div class="img">
-                <img class="flag" v-if="availableFlag.includes( element.original_language)" :src="'flag/' + element.original_language + '.svg'" alt="">
-                <span v-else><strong>Language: </strong>{{element.original_language}}</span>
-              </div>
-            </div>
-            <!-- End Language -->
-
-            <!-- Vote -->
-            <div class="vote">
-              <strong>Vote: </strong><span><i v-for="i in getVote(element.vote_average)" class="fas fa-star"></i><i v-for="i in (5 - getVote(element.vote_average))" class="far fa-star"></i></span>
-            </div>
-            <!-- End Vote -->
-
-            <!-- Overview -->
-            <div class="overview">
-              <strong>Overview:</strong> {{element.overview}}
-            </div>
-            <!-- End Overview -->
-
-          </div>
-
-        </div>
-        <!-- END Single SERIES Search -->
 
       </div>
     </div>
