@@ -34,6 +34,9 @@ Trasformiamo quello che abbiamo fatto fino ad ora in una vera e propria webapp, 
 */
 
 new Vue({
+
+
+
   el: '#app',
   data: {
     textSearched: ' ',
@@ -47,7 +50,10 @@ new Vue({
 
   methods: {
 
+
     wholeContentFx() {
+      //MERGIANDO di volta in volta le ricerche in OBJ, devo andarlo a svuotare ad ogni ricerca successiva; come nella stringa apena sotto:
+      this.obj = [];
       this.searchMoviesFx();
       this.searchSeriesFx();
     },
@@ -55,7 +61,7 @@ new Vue({
     searchMoviesFx() {
       //Per bypassare lo scope interno alla FX del THEN:
       // const self = this;
-      // L'alternativa, qui, cmq, utilizzata è rendere la FX interna al THEN una Arrow FX
+      // L'alternativa, qui, cmq, utilizzata è rendere la FX interna al THEN una Arrow FX (stesso approccio nel FX che segue appena dopo questa)
       axios
         .get('https://api.themoviedb.org/3/search/movie', {
           params: {
@@ -73,9 +79,6 @@ new Vue({
     },
 
     searchSeriesFx() {
-      //Per bypassare lo scope interno alla FX del THEN:
-      // const self = this;
-      // L'alternativa, qui, cmq, utilizzata è rendere la FX interna al THEN una Arrow FX
       axios
         .get('https://api.themoviedb.org/3/search/tv', {
           params: {
@@ -92,15 +95,13 @@ new Vue({
       });
     },
 
-
     getVote(vote) {
       return Math.ceil(vote / 2);
     }
 
 
-
-
   }
+
 
 
 });
