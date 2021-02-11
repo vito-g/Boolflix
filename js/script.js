@@ -34,7 +34,7 @@ new Vue({
     obj: [],
     objSeries: [],
     availableFlag: ['it', 'en', 'fr', 'de', 'es'],
-    picturePath: 'https://image.tmdb.org/t/p/w92/'
+    picturePath: 'https://image.tmdb.org/t/p/w342/'
   },
 
   methods: {

@@ -12,7 +12,7 @@ i {
   color: orange;
 }
 
-.img {
+.img .flag{
   width: 16px;
 }
 
@@ -26,13 +26,21 @@ i {
 }
 
 .single-box {
-  width: 220px;
-  height: 350px;
-  padding: 40px 10px;
+  width: 344px;
+  height: 515px;
+  /* padding: 40px 10px; */
   margin: 50px;
   font-size: 10px;
   color: white;
   border: 1px solid white;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   background-color: black;
+}
+
+.info {
+  display: none;
+}
+
+.single-box:hover .info {
+  display: block;
 }
