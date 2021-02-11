@@ -46,12 +46,12 @@ new Vue({
 
   methods: {
 
-    wholeContentFx: function() {
+    wholeContentFx() {
       this.searchMoviesFx();
       this.searchSeriesFx();
     },
 
-    searchMoviesFx: function() {
+    searchMoviesFx() {
       //Per bypassare lo scope interno alla FX del then
       const self = this;
       // axios.get('https://api.themoviedb.org/3/search/movie?api_key=1eab81ae7f08840126e340e60ce049eb&query=' + this.textSearched)
@@ -71,7 +71,7 @@ new Vue({
       });
     },
 
-    searchSeriesFx: function() {
+    searchSeriesFx() {
       //Per bypassare lo scope interno alla FX del then
       const self = this;
       axios
@@ -89,7 +89,7 @@ new Vue({
     },
 
 
-    getVote: function(vote) {
+    getVote(vote) {
       return Math.ceil(vote / 2);
     }
 
