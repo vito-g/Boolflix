@@ -37,6 +37,7 @@ new Vue({
   el: '#app',
   data: {
     textSearched: ' ',
+    obj: [],
     objMovies: [],
     objSeries: [],
     availableFlag: ['it', 'en', 'fr', 'de', 'es'],
@@ -52,9 +53,9 @@ new Vue({
     },
 
     searchMoviesFx() {
-      //Per bypassare lo scope interno alla FX del then
+      //Per bypassare lo scope interno alla FX del THEN:
       // const self = this;
-
+      // L'alternativa, qui, cmq, utilizzata è rendere la FX interna al THEN una Arrow FX
       axios
         .get('https://api.themoviedb.org/3/search/movie', {
           params: {
@@ -63,15 +64,18 @@ new Vue({
         },
       })
       .then((resp) => {
-      console.log(resp);
+      console.log('response', resp);
       this.objMovies = resp.data.results;
-      console.log(this.objMovies);
+      this.obj = [...this.obj, ...this.objMovies];
+      console.log('objMovies',this.objMovies);
+      console.log('obj',this.obj);
       });
     },
 
     searchSeriesFx() {
-      //Per bypassare lo scope interno alla FX del then
+      //Per bypassare lo scope interno alla FX del THEN:
       // const self = this;
+      // L'alternativa, qui, cmq, utilizzata è rendere la FX interna al THEN una Arrow FX
       axios
         .get('https://api.themoviedb.org/3/search/tv', {
           params: {
@@ -80,9 +84,11 @@ new Vue({
         },
       })
       .then((resp) => {
-      console.log(resp);
+      console.log('response', resp);
       this.objSeries = resp.data.results;
-      console.log(this.objSeries);
+      this.obj = [...this.obj, ...this.objSeries];
+      console.log('objSeries', this.objSeries);
+      console.log('obj', this.obj);
       });
     },
 
