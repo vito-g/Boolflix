@@ -50,6 +50,13 @@
             <strong>Vote: </strong><span><i v-for="i in getVote(element.vote_average)" class="fas fa-star"></i><i v-for="i in (5 - getVote(element.vote_average))" class="far fa-star"></i></span>
           </div>
           <!-- End Vote -->
+
+          <!-- Overview -->
+          <div class="overview">
+              <strong>Overview:</strong> {{element.overview}}
+          </div>
+          <!-- End Overview -->
+
           <br>
 
         </div>
@@ -86,7 +93,12 @@
             <strong>Vote: </strong><span><i v-for="i in getVote(element.vote_average)" class="fas fa-star"></i><i v-for="i in (5 - getVote(element.vote_average))" class="far fa-star"></i></span>
           </div>
           <!-- End Vote -->
-          <br>
+
+          <!-- Overview -->
+          <div class="overview">
+              <strong>Overview:</strong> {{element.overview}}
+          </div>
+          <!-- End Overview -->
 
         </div>
         <!-- END Single SERIES Search -->
