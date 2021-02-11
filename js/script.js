@@ -46,6 +46,11 @@ new Vue({
 
   methods: {
 
+    wholeContentFx: function() {
+      this.searchMoviesFx();
+      this.searchSeriesFx();
+    },
+
     searchMoviesFx: function() {
       //Per bypassare lo scope interno alla FX del then
       const self = this;
