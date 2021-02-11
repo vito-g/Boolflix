@@ -21,10 +21,12 @@
 
         <!-- Single MOVIE Search -->
         <div class="single-box" v-for="element in obj">
+          <img :src="'https://image.tmdb.org/t/p/w92/' + element.poster_path" alt="">
           <!-- Title -->
           <div class="title">
             <strong>Title:</strong>
             {{element.title}}
+            <!-- {{element.poster_path}} -->
           </div>
           <!-- End Title -->
 
