@@ -33,7 +33,8 @@ new Vue({
     textSearched: ' ',
     obj: [],
     objSeries: [],
-    availableFlag: ['it', 'en', 'fr', 'de', 'es']
+    availableFlag: ['it', 'en', 'fr', 'de', 'es'],
+    picturePath: 'https://image.tmdb.org/t/p/w92/'
   },
 
   methods: {

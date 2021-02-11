@@ -21,7 +21,7 @@
 
         <!-- Single MOVIE Search -->
         <div class="single-box" v-for="element in obj">
-          <img :src="'https://image.tmdb.org/t/p/w92/' + element.poster_path" alt="">
+          <img :src="picturePath + element.poster_path" alt="">
           <!-- Title -->
           <div class="title">
             <strong>Title:</strong>
@@ -58,7 +58,7 @@
 
         <!-- Single SERIES Search-->
         <div class="single-box" v-for="element in objSeries">
-          <img :src="'https://image.tmdb.org/t/p/w92/' + element.poster_path" alt="">
+          <img :src="picturePath + element.poster_path" alt="">
           <!-- Title -->
           <div class="title">
             <strong>Title:</strong>
