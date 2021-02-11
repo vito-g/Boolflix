@@ -8,6 +8,11 @@ body {
   font-family: sans-serif;
 }
 
+header {
+  height: 102.6px;
+  background-color: black;
+}
+
 i {
   color: orange;
 }
