@@ -23,7 +23,9 @@
 
         <!-- Single MOVIE Search -->
         <div class="single-box" v-for="element in obj">
-          <img class="poster" :src="picturePath + element.poster_path" alt="">
+
+          <img v-if="element.poster_path" class="poster" :src="picturePath + element.poster_path" alt="">
+          <img v-else="!element.poster_path" class="poster" :src="picturePlaceHolder" alt="">
 
           <div class="info">
             <!-- Title -->
@@ -42,7 +44,7 @@
             <!-- Language -->
             <div class="lang">
               <div class="img">
-                <img class="flag" v-if="availableFlag.includes( element.original_language)" :src="'flag/' + element.original_language + '.svg'" alt="">
+                <img class="flag" v-if="availableFlag.includes(element.original_language)" :src="'flag/' + element.original_language + '.svg'" alt="">
                 <span v-else><strong>Language: </strong>{{element.original_language}}</span>
               </div>
             </div>
@@ -70,7 +72,10 @@
 
         <!-- Single SERIES Search-->
         <div class="single-box" v-for="element in objSeries">
-          <img class="poster" :src="picturePath + element.poster_path" alt="">
+
+          <img v-if="element.poster_path" class="poster" :src="picturePath + element.poster_path" alt="">
+          <img v-else="!element.poster_path" class="poster" :src="picturePlaceHolder" alt="">
+                  
           <div class="info">
             <!-- Title -->
             <div class="title">
