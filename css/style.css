@@ -11,6 +11,11 @@ body {
 header {
   height: 102.6px;
   background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 20px;
 }
 
 i {
