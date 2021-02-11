@@ -5,6 +5,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>BOOLFIX</title>
   </head>
@@ -38,23 +40,23 @@
           <div class="info">
             <!-- Title -->
             <div v-if="element.title" class="title">
-              <strong>Title:</strong>
+              <span>Title:</span>
               {{element.title}}
             </div>
 
             <div v-if="element.name" class="title">
-              <strong>Title:</strong>
+              <span>Title:</span>
               {{element.name}}
             </div>
             <!-- End Title -->
 
             <!-- Original Title -->
             <div v-if="element.original_title" class="original-title">
-              <strong>Original Title:</strong> {{element.original_title}}
+              <span>Original Title:</span> {{element.original_title}}
             </div>
 
             <div v-if="element.original_name" class="original-name">
-              <strong>Original Title:</strong> {{element.original_name}}
+              <span>Original Title:</span> {{element.original_name}}
             </div>
             <!-- End Original Title -->
 
@@ -62,23 +64,23 @@
             <div class="lang">
               <div class="img">
                 <img class="flag" v-if="availableFlag.includes(element.original_language)" :src="'flag/' + element.original_language + '.svg'" alt="">
-                <span v-else><strong>Language: </strong>{{element.original_language}}</span>
+                <div v-else><span>Language: </span>{{element.original_language}}</div>
               </div>
             </div>
             <!-- End Language -->
 
             <!-- Vote -->
             <div class="vote">
-              <strong>Vote: </strong><span><i v-for="i in getVote(element.vote_average)" class="fas fa-star"></i><i v-for="i in (5 - getVote(element.vote_average))" class="far fa-star"></i></span>
+              <span>Vote: </span><span><i v-for="i in getVote(element.vote_average)" class="fas fa-star"></i><i v-for="i in (5 - getVote(element.vote_average))" class="far fa-star"></i></span>
             </div>
             <!-- End Vote -->
 
             <!-- Overview -->
             <div v-if="element.overview" class="overview">
-              <strong>Overview:</strong> {{element.overview}}
+              <span>Overview:</span> {{element.overview}}
             </div>
             <div v-else class="overview">
-              <strong>Overview:</strong> The description of movie documents has become a necessary condition to explore the content. For this purpose, the extraction of generic descriptions represents a pertinent solution for an interrogation process. In this context, two types of descriptions are used, an external and a content description. In this regard, the title and the keywords descriptions represent the description that can be identified from the content.
+              <span>Overview:</span> The description of movie documents has become a necessary condition to explore the content. For this purpose, the extraction of generic descriptions represents a pertinent solution for an interrogation process. In this context, two types of descriptions are used, an external and a content description. In this regard, the title and the keywords descriptions represent the description that can be identified from the content.
             </div>
             <!-- End Overview -->
 
