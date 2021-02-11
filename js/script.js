@@ -53,10 +53,8 @@ new Vue({
 
     searchMoviesFx() {
       //Per bypassare lo scope interno alla FX del then
-      const self = this;
-      // axios.get('https://api.themoviedb.org/3/search/movie?api_key=1eab81ae7f08840126e340e60ce049eb&query=' + this.textSearched)
-      // .then(function(resp) {
-        //Per maggior chiarezza di lettura, posso scrivere la get di axios in modo alternativo come appena sotto
+      // const self = this;
+
       axios
         .get('https://api.themoviedb.org/3/search/movie', {
           params: {
@@ -64,16 +62,16 @@ new Vue({
             query: this.textSearched,
         },
       })
-      .then(function(resp) {
+      .then((resp) => {
       console.log(resp);
-      self.objMovies = resp.data.results;
-      console.log(self.objMovies);
+      this.objMovies = resp.data.results;
+      console.log(this.objMovies);
       });
     },
 
     searchSeriesFx() {
       //Per bypassare lo scope interno alla FX del then
-      const self = this;
+      // const self = this;
       axios
         .get('https://api.themoviedb.org/3/search/tv', {
           params: {
@@ -81,10 +79,10 @@ new Vue({
             query: this.textSearched,
         },
       })
-      .then(function(resp) {
+      .then((resp) => {
       console.log(resp);
-      self.objSeries = resp.data.results;
-      console.log(self.objSeries);
+      this.objSeries = resp.data.results;
+      console.log(this.objSeries);
       });
     },
 
