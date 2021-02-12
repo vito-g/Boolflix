@@ -191,7 +191,8 @@ new Vue({
     moviesId: [],
     seriesId: [],
     allId: [],
-    singleId: ''
+    singleId: '',
+    actors: []
   },
 
   methods: {
@@ -232,7 +233,7 @@ new Vue({
         // console.log('single Movie id', self.singleId);
         self.moviesId.push(element.id);
         console.log('Movies id: ', self.moviesId);
-        let actors = [];
+        // let actors = [];
         axios.get('https://api.themoviedb.org/3/movie/' + self.singleId + '/credits?api_key=1eab81ae7f08840126e340e60ce049eb&language=en-US')
         .then((resp) => {
         this.actors.push(resp.data.cast.name);
