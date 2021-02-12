@@ -232,11 +232,11 @@ new Vue({
         // console.log('single Movie id', self.singleId);
         self.moviesId.push(element.id);
         console.log('Movies id: ', self.moviesId);
-        let actors = '';
+        let actors = [];
         axios.get('https://api.themoviedb.org/3/movie/' + self.singleId + '/credits?api_key=1eab81ae7f08840126e340e60ce049eb&language=en-US')
         .then((resp) => {
-        actors = resp.data.cast.name;
-        console.log(actors);
+        this.actors.push(resp.data.cast.name);
+        console.log(this.actors);
         })
       })
       this.allId = [...this.allId,...this.moviesId];
