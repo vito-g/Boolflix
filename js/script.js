@@ -232,6 +232,7 @@ new Vue({
       self.objMovies.forEach((element) => {
         self.moviesId.push(element.id);
         console.log('Movies id: ', self.moviesId);
+      })
       this.allId = [...this.allId,...this.moviesId];
       console.log('All Id', this.allId);
       });
