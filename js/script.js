@@ -276,12 +276,12 @@ new Vue({
         axios.get('https://api.themoviedb.org/3/movie/' + element.id + '/credits?api_key=1eab81ae7f08840126e340e60ce049eb&language=en-US')
         .then((resp) => {
             let cast = resp.data.cast;
-            console.log(this.cast);
+            console.log(cast);
           for (var i = 0; i < 5; i++) {
               this.actors.push(cast[i].name);
               console.log(this.actors);
             }
-            // this.actors = [];
+            // this.actors = []; //Resettare qui non va bene perchè mi svuota l'array di nomi prima che possa utilizzarlo...
       });
 
     },
