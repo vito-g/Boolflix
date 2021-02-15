@@ -32,7 +32,7 @@
       <div class="results">
 
         <!-- Single Search -->
-        <div @mouseenter="actorsFx()" class="single-box" v-for="element in obj">
+        <div @mouseenter="actorsFx(element)" class="single-box" v-for="element in obj">
 
           <img v-if="element.poster_path" class="poster" :src="picturePath + element.poster_path" alt="">
           <img v-else class="poster" :src="picturePlaceHolder" alt="">
@@ -85,9 +85,10 @@
             <!-- End Overview -->
 
             <!-- Actors -->
-            <!-- <div v-for="element in actors" class="actors">
-              <span>Actors:</span> {{element.name}}
-            </div> -->
+            <span>Actors:</span>
+            <div v-for="element in partialCast" class="actors">
+              {{element.name}}
+            </div>
             <!-- END Actors -->
 
           </div>

@@ -192,8 +192,8 @@ new Vue({
     seriesId: [],
     allId: [],
     singleId: '',
-    actors: [],
-    actorsName: ''
+    cast: [],
+    partialCast: []
   },
 
   methods: {
@@ -205,6 +205,7 @@ new Vue({
       this.allId = [];
       this.moviesId = [];
       this.seriesId = [];
+      // this.actors = [];
       this.searchMoviesFx();
       this.searchSeriesFx();
     },
@@ -271,17 +272,19 @@ new Vue({
       });
     },
 
-    actorsFx() {
-      this.obj.forEach((element) => {
-        this.singleId = element.id;
-        console.log(this.singleId);
-        axios.get('https://api.themoviedb.org/3/movie/' + this.singleId + '/credits?api_key=1eab81ae7f08840126e340e60ce049eb&language=en-US')
+    actorsFx(element) {
+      this.partialCast = [];
+        axios.get('https://api.themoviedb.org/3/movie/' + element.id + '/credits?api_key=1eab81ae7f08840126e340e60ce049eb&language=en-US')
         .then((resp) => {
-            this.actors.push(resp.data.cast);
-            console.log(this.actors);
-
+            let cast = resp.data.cast;
+            console.log(this.cast);
+          for (var i = 0; i < 5; i++) {
+              this.partialCast.push(cast[i]);
+              console.log(this.partialCast);
+            }
+            // this.actors = [];
       });
-      })
+
     },
 
     getVote(vote) {
