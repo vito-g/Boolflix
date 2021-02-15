@@ -230,17 +230,8 @@ new Vue({
       console.log('obj',this.obj);
       const self = this;
       self.objMovies.forEach((element) => {
-        // self.singleId = element.id;
-        // console.log('single Movie id', self.singleId);
         self.moviesId.push(element.id);
         console.log('Movies id: ', self.moviesId);
-        // let actors = [];
-        // axios.get('https://api.themoviedb.org/3/movie/' + self.singleId + '/credits?api_key=1eab81ae7f08840126e340e60ce049eb&language=en-US')
-        // .then((resp) => {
-        // this.actors.push(resp.data.cast.name);
-        // console.log(this.actors);
-        // })
-      })
       this.allId = [...this.allId,...this.moviesId];
       console.log('All Id', this.allId);
       });
