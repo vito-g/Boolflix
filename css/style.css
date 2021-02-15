@@ -24,6 +24,10 @@ span {
   font-weight: 700;
 }
 
+span.actors {
+  font-weight: 300;
+}
+
 button {
   cursor: pointer;
 }
