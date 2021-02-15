@@ -192,7 +192,8 @@ new Vue({
     seriesId: [],
     allId: [],
     singleId: '',
-    actors: []
+    actors: [],
+    actorsName: ''
   },
 
   methods: {
@@ -229,16 +230,16 @@ new Vue({
       console.log('obj',this.obj);
       const self = this;
       self.objMovies.forEach((element) => {
-        self.singleId = element.id;
+        // self.singleId = element.id;
         // console.log('single Movie id', self.singleId);
         self.moviesId.push(element.id);
         console.log('Movies id: ', self.moviesId);
         // let actors = [];
-        axios.get('https://api.themoviedb.org/3/movie/' + self.singleId + '/credits?api_key=1eab81ae7f08840126e340e60ce049eb&language=en-US')
-        .then((resp) => {
-        this.actors.push(resp.data.cast.name);
-        console.log(this.actors);
-        })
+        // axios.get('https://api.themoviedb.org/3/movie/' + self.singleId + '/credits?api_key=1eab81ae7f08840126e340e60ce049eb&language=en-US')
+        // .then((resp) => {
+        // this.actors.push(resp.data.cast.name);
+        // console.log(this.actors);
+        // })
       })
       this.allId = [...this.allId,...this.moviesId];
       console.log('All Id', this.allId);
@@ -268,6 +269,19 @@ new Vue({
       this.allId = [...this.allId,...this.seriesId];
       console.log('All Id', this.allId);
       });
+    },
+
+    actorsFx() {
+      this.obj.forEach((element) => {
+        this.singleId = element.id;
+        console.log(this.singleId);
+        axios.get('https://api.themoviedb.org/3/movie/' + this.singleId + '/credits?api_key=1eab81ae7f08840126e340e60ce049eb&language=en-US')
+        .then((resp) => {
+            this.actors.push(resp.data.cast);
+            console.log(this.actors);
+
+      });
+      })
     },
 
     getVote(vote) {
